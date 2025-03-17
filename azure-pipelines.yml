@@ -44,7 +44,7 @@ pool:
 
 variables:
   system_accesstoken: $(System.AccessToken)
-  
+
 jobs:
 - job: Work
   steps:
@@ -64,7 +64,7 @@ jobs:
   - bash: |
       az boards work-item create \
         --title "Build $(build.buildNumber) failed" \
-        --type bug \
+        --type task \
         --org https://dev.azure.com/augustineubanzemeka0832 \
         --project "Data Engineering Environment"
     env: 
